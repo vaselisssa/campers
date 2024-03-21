@@ -36,7 +36,9 @@ export const LinkStyled = styled(NavLink)`
    padding: 8px;
    width: 150px;
 
-   &:hover {
+   &:hover,
+   &:focus,
+   &:active {
       color: #c13030; /* Изменение цвета текста при ховере */
       border-color: #c13030; /* Темная обводка при ховере */
    }
