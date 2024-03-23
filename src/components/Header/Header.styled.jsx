@@ -2,8 +2,15 @@ import styled from "@emotion/styled";
 import { NavLink } from "react-router-dom";
 
 export const HeaderStyled = styled.header`
-   background-color: #e44848; /* Красный цвет для хедера */
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   z-index: 1000;
+
+   background-color: var(--input-background-color);
    padding: 20px;
+   border-bottom: 2px solid var(--secondary-color);
    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 `;
 
@@ -27,19 +34,19 @@ export const LinkStyled = styled(NavLink)`
    justify-content: center;
    align-items: center;
 
-   color: #fff;
+   color: var(--secondary-color);
    text-decoration: none;
-   font-weight: bold;
-   transition: color 0.3s ease, border-color 0.3s ease;
-   border: 2px solid #fff;
-   border-radius: 20px;
-   padding: 8px;
-   width: 150px;
+   font-weight: 600;
+   border: 2px solid var(--secondary-color);
+   border-radius: 200px;
+   padding: 16px;
+   width: 180px;
+   transition: color 0.3s ease, background-color 0.3s ease;
 
    &:hover,
    &:focus,
    &:active {
-      color: #c13030; /* Изменение цвета текста при ховере */
-      border-color: #c13030; /* Темная обводка при ховере */
+      color: #fff;
+      background-color: var(--secondary-color);
    }
 `;

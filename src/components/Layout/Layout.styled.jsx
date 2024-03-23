@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 
 export const Container = styled.div`
+   background-color: #f7f7f7;
    width: 100%;
 `;
 
@@ -8,7 +9,7 @@ export const Content = styled.main`
    display: flex;
    justify-content: center;
    width: 100%;
-   min-height: calc(100vh - 64px);
+   margin-top: 95px;
 `;
 
 export const LoaderContainer = styled.div`

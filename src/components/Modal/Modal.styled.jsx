@@ -8,7 +8,7 @@ export const Backdrop = styled.div`
    width: 100%;
    height: 100%;
 
-   background-color: rgba(0, 0, 0, 0.7);
+   background-color: rgba(17, 18, 19, 0.4);
 `;
 
 export const Content = styled.div`
