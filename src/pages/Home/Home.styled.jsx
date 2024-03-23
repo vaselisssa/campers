@@ -5,9 +5,8 @@ export const HomeContainer = styled.div`
    width: 100vw;
    min-height: calc(100vh - 77px);
    padding: 40px 40px 0 40px;
-   color: #475467;
+   color: var(--secondary-color);
    background-image: url(${backgroundImage});
-   background-color: rgba(255, 255, 255, 0.8);
    background-size: contain;
    background-repeat: no-repeat;
    background-position: right;
@@ -26,13 +25,14 @@ export const ServiceTitle = styled.h2`
 `;
 
 export const ServiceList = styled.ul`
-   width: 50%;
+   width: 600px;
    display: flex;
    flex-direction: column;
    gap: 20px;
 `;
 
 export const ServiceItem = styled.li`
-   font-size: 18px;
+   font-size: 24px;
    font-weight: 400;
+   text-shadow: 0 0 20px #ffffff;
 `;

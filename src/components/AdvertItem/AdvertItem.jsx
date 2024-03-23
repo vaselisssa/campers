@@ -8,6 +8,8 @@ import { selectFavorites } from "../../redux/adverts/selectors";
 
 import Icon from "../Icon";
 import DetailsList from "../DetailsList";
+import Modal from "../Modal";
+import DetailsModal from "../DetailsModal";
 import {
    AdvertItemStyled,
    ImgThumb,
@@ -33,12 +35,18 @@ const AdvertItem = ({ item }) => {
       [favorites, item._id]
    );
 
+   const [modalOpen, setModalOpen] = useState(false);
+
    const handleToggleFavorite = () => {
       if (!isFavorite) {
          dispatch(addToFavorites(item));
          return;
       }
       dispatch(removeFromFavorites(item._id));
+   };
+
+   const toggleModal = () => {
+      setModalOpen(!modalOpen);
    };
 
    return (
@@ -83,14 +91,16 @@ const AdvertItem = ({ item }) => {
             <ShowMoreBtn
                type="button"
                aria-label="Show more details"
-               // onClick={() => {
-               //    setIsModalShown(true);
-               //    document.body.style.overflow = "hidden";
-               // }}
+               onClick={toggleModal}
             >
                Show more
             </ShowMoreBtn>
          </InfoBox>
+         {modalOpen && (
+            <Modal onClose={toggleModal}>
+               <DetailsModal item={item} />
+            </Modal>
+         )}
       </AdvertItemStyled>
    );
 };

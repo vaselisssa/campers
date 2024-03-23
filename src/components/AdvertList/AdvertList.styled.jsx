@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
 
-export const AdvertListWrapper = styled.div``;
+export const AdvertListWrapper = styled.div`
+   padding-bottom: 100px;
+`;
 
 export const AdvertListStyled = styled.div`
    display: flex;
@@ -13,7 +15,8 @@ export const LoadMoreBtn = styled.button`
    justify-content: center;
    align-items: center;
 
-   margin: 50px auto 100px auto;
+   margin: 0 auto;
+   margin-top: 50px;
    padding: 16px 32px;
    border: 1px solid rgba(71, 84, 103, 0.2);
    outline: none;
