@@ -23,7 +23,7 @@ const Filter = () => {
 
    const [location, setLocation] = useState(filter.location);
    const [details, setDetails] = useState(filter.details);
-   const [vehicleType, setVehicleType] = useState(filter.vehicleType);
+   const [vehicleType, setVehicleType] = useState(filter.vehicleType || "");
 
    const handleClick = () => {
       dispatch(setSearchParams({ location, details, vehicleType }));
@@ -36,6 +36,8 @@ const Filter = () => {
 
    const handleVehicleType = (e) => {
       const { value } = e.target;
+
+      console.log(value);
       setVehicleType(value);
    };
 

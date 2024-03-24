@@ -9,7 +9,7 @@ const initialState = {
       tv: false,
       bathroom: false,
    },
-   vehicleType: { van: false, fullyIntegrated: false, alcove: false },
+   vehicleType: "",
 };
 
 const filterSlice = createSlice({

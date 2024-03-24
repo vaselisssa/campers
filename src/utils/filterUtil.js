@@ -24,16 +24,9 @@ export const filterAdverts = (adverts, filter) => {
       filteredByLocation
    );
 
-   const filteredByVehicleType = Object.keys(filter.vehicleType).reduce(
-      (filtered, type) => {
-         if (filter.vehicleType[type]) {
-            return filtered.filter((ad) => ad.form === type);
-         } else {
-            return filtered;
-         }
-      },
-      filteredByDetails
-   );
+   const filteredByVehicleType = filter.vehicleType
+      ? filteredByDetails.filter((ad) => ad.form === filter.vehicleType)
+      : filteredByDetails;
 
    return filteredByVehicleType;
 };
