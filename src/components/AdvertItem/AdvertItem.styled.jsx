@@ -141,10 +141,6 @@ export const Description = styled.p`
 `;
 
 export const ShowMoreBtn = styled.button`
-   display: flex;
-   justify-content: center;
-   align-items: center;
-
    padding: 16px 40px;
    border: none;
    outline: none;

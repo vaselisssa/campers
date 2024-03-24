@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
    addToFavorites,
    removeFromFavorites,
-} from "../../redux/adverts/slice.js";
+} from "../../redux/adverts/advertsSlice.js";
 import { selectFavorites } from "../../redux/adverts/selectors";
 
 import Icon from "../Icon";

@@ -6,7 +6,6 @@ export const getAllAdverts = createAsyncThunk(
    async (_, thunkAPI) => {
       try {
          const adverts = await fetchAdverts();
-         console.log(adverts);
          return adverts;
       } catch (error) {
          return thunkAPI.rejectWithValue(error.message);

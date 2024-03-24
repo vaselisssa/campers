@@ -26,6 +26,7 @@ export const NavItem = styled.li`
 
    &:last-of-type {
       margin-left: auto;
+      margin-right: 0;
    }
 `;
 
