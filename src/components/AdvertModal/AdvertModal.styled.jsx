@@ -51,6 +51,14 @@ export const RatingLocationWrapper = styled.div`
    margin-bottom: 16px;
 `;
 
+export const Price = styled.p`
+   margin-bottom: 24px;
+   font-weight: 600;
+   font-size: 24px;
+   line-height: 1.25;
+   color: var(--primary-color);
+`;
+
 export const ScrollBox = styled.div`
    height: 450px;
    overflow-y: auto;
@@ -70,7 +78,6 @@ export const GalleryWrapper = styled.div`
    display: flex;
    justify-content: flex-start;
    gap: 16px;
-   margin-top: 24px;
    margin-bottom: 24px;
 `;
 

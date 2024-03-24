@@ -1,17 +1,15 @@
 import React, { useState } from "react";
 import Icon from "../Icon";
+import Features from "../Features";
+import Reviews from "../Reviews";
 
-import {
-   Rating,
-   Location,
-   Price,
-   ImgThumb,
-} from "../AdvertItem/AdvertItem.styled";
+import { Rating, Location, ImgThumb } from "../AdvertItem/AdvertItem.styled";
 import {
    AdvertModalContent,
    CloseBtn,
    Title,
    RatingLocationWrapper,
+   Price,
    ScrollBox,
    GalleryWrapper,
    Description,
@@ -36,7 +34,11 @@ const AdvertModal = ({ item, onClose }) => {
          <RatingLocationWrapper>
             <Rating>
                <Icon icon="icon-star" width={16} height={16} />
-               <button type="button" aria-label="Open reviews">
+               <button
+                  type="button"
+                  aria-label="Open reviews"
+                  onClick={() => handleTabClick(2)}
+               >
                   {`${item.rating}(${item.reviews.length} Reviews)`}
                </button>
             </Rating>
@@ -80,6 +82,10 @@ const AdvertModal = ({ item, onClose }) => {
             </Tab>
          </TabsBox>
          <Line />
+         <div>
+            {activeTab === 1 && <Features item={item} />}
+            {activeTab === 2 && <Reviews rev={item.reviews} />}
+         </div>
       </AdvertModalContent>
    );
 };
