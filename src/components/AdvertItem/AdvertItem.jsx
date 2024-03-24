@@ -9,7 +9,7 @@ import { selectFavorites } from "../../redux/adverts/selectors";
 import Icon from "../Icon";
 import DetailsList from "../DetailsList";
 import Modal from "../Modal";
-import DetailsModal from "../DetailsModal";
+import AdvertModal from "../AdvertModal";
 import {
    AdvertItemStyled,
    ImgThumb,
@@ -98,7 +98,7 @@ const AdvertItem = ({ item }) => {
          </InfoBox>
          {modalOpen && (
             <Modal onClose={toggleModal}>
-               <DetailsModal item={item} />
+               <AdvertModal item={item} onClose={toggleModal} />
             </Modal>
          )}
       </AdvertItemStyled>
