@@ -11,10 +11,3 @@ export const Content = styled.main`
    width: 100%;
    margin-top: 145px;
 `;
-
-export const LoaderContainer = styled.div`
-   position: fixed;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-`;
