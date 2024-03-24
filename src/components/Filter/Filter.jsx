@@ -37,7 +37,6 @@ const Filter = () => {
    const handleVehicleType = (e) => {
       const { value } = e.target;
 
-      console.log(value);
       setVehicleType(value);
    };
 

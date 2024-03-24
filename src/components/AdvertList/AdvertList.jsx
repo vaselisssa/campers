@@ -14,9 +14,7 @@ const AdvertList = () => {
    const filter = useSelector(selectFilter);
    const [loadedCount, setLoadedCount] = useState(4);
 
-   console.log(filter);
    const filteredAdverts = filterAdverts(adverts, filter);
-   console.log("filteredAdverts:", filteredAdverts);
 
    const handleLoadMore = () => {
       setLoadedCount((prev) => prev + 4);
