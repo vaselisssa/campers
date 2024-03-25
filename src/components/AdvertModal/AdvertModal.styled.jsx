@@ -6,7 +6,7 @@ export const AdvertModalContent = styled.div`
    border-radius: 20px;
    padding: 40px;
    width: 982px;
-   height: calc(100vh - 5%);
+   max-height: calc(100vh - 5%);
    background-color: #fff;
    overflow-y: auto;
 
