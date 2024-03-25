@@ -1,9 +1,11 @@
 import React from "react";
 import FeaturesDetailsList from "../FeaturesDetailsList";
+import VehicleDetails from "../VehicleDetails";
 import {
    FeaturesStyled,
    FeaturesWrapper,
-   VehicleDetails,
+   VehicleDetailsBox,
+   Line,
    FormBox,
 } from "./Features.styled";
 
@@ -14,9 +16,11 @@ const Features = ({ item }) => {
       <FeaturesStyled>
          <FeaturesWrapper>
             <FeaturesDetailsList details={detailsFull} />
-            <VehicleDetails>
+            <VehicleDetailsBox>
                <h3>Vehicle details</h3>
-            </VehicleDetails>
+               <Line />
+               <VehicleDetails item={item} />
+            </VehicleDetailsBox>
          </FeaturesWrapper>
          <FormBox></FormBox>
       </FeaturesStyled>

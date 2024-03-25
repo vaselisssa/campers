@@ -5,7 +5,6 @@ export const DetailsListStyled = styled.ul`
    width: 100%;
    gap: 8px;
    flex-wrap: wrap;
-   margin-bottom: 44px;
 `;
 
 export const DetailItem = styled.li`

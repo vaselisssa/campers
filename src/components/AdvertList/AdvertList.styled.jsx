@@ -4,7 +4,7 @@ export const AdvertListWrapper = styled.div`
    padding-bottom: 100px;
 `;
 
-export const AdvertListStyled = styled.div`
+export const AdvertListStyled = styled.ul`
    display: flex;
    flex-direction: column;
    gap: 24px;

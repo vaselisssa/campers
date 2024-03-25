@@ -1,4 +1,5 @@
 import React from "react";
+import { capitalizeFirstLetter } from "../../utils/capitalizeFirstLetter.js";
 import Icon from "../Icon";
 
 import { DetailsListStyled, DetailItem } from "./FeaturesDetailsList.styled";
@@ -57,7 +58,7 @@ const FeaturesDetailsList = ({ details }) => {
                      ? details[key]
                      : ""}
                   {key === "transmission" || key === "engine"
-                     ? details[key]
+                     ? capitalizeFirstLetter(details[key])
                      : ` ${key}`}
                </span>
             </DetailItem>
