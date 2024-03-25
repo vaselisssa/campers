@@ -36,6 +36,16 @@ const AdvertItem = ({ item }) => {
    );
 
    const [modalOpen, setModalOpen] = useState(false);
+   const [activeTab, setActiveTab] = useState(0);
+
+   const handleTabClick = (index) => {
+      setActiveTab(index);
+   };
+
+   const openReviews = () => {
+      setModalOpen(true);
+      handleTabClick(2);
+   };
 
    const handleToggleFavorite = () => {
       if (!isFavorite) {
@@ -75,7 +85,11 @@ const AdvertItem = ({ item }) => {
             <RatingLocationWrapper>
                <Rating>
                   <Icon icon="icon-star" width={16} height={16} />
-                  <button type="button" aria-label="Open reviews">
+                  <button
+                     type="button"
+                     aria-label="Open reviews"
+                     onClick={openReviews}
+                  >
                      {`${item.rating}(${item.reviews.length} Reviews)`}
                   </button>
                </Rating>
@@ -98,7 +112,12 @@ const AdvertItem = ({ item }) => {
          </InfoBox>
          {modalOpen && (
             <Modal onClose={toggleModal}>
-               <AdvertModal item={item} onClose={toggleModal} />
+               <AdvertModal
+                  item={item}
+                  onClose={toggleModal}
+                  activeTab={activeTab}
+                  setActiveTab={setActiveTab}
+               />
             </Modal>
          )}
       </AdvertItemStyled>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Icon from "../Icon";
 import Features from "../Features";
 import Reviews from "../Reviews";
@@ -18,9 +18,7 @@ import {
    Line,
 } from "./AdvertModal.styled";
 
-const AdvertModal = ({ item, onClose }) => {
-   const [activeTab, setActiveTab] = useState(0);
-
+const AdvertModal = ({ item, onClose, activeTab, setActiveTab }) => {
    const handleTabClick = (index) => {
       setActiveTab(index);
    };
