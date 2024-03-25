@@ -60,6 +60,7 @@ export const Price = styled.p`
 `;
 
 export const ScrollBox = styled.div`
+   margin-right: -20px;
    height: 450px;
    overflow-y: auto;
 
@@ -68,9 +69,13 @@ export const ScrollBox = styled.div`
       width: 8px;
    }
 
-   body::-webkit-scrollbar-thumb {
+   &::-webkit-scrollbar-thumb {
       border-radius: 7px;
       background-color: #d9d9d9;
+   }
+
+   div {
+      width: 902px;
    }
 `;
 

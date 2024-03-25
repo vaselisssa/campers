@@ -51,19 +51,21 @@ const AdvertModal = ({ item, onClose }) => {
 
          <Price>€{item.price.toFixed(2)}</Price>
          <ScrollBox>
-            <GalleryWrapper>
-               <ImgThumb>
-                  <img src={item.gallery[0]} alt={item.name} />
-               </ImgThumb>
-               <ImgThumb>
-                  <img src={item.gallery[1]} alt={item.name} />
-               </ImgThumb>
-               <ImgThumb>
-                  <img src={item.gallery[2]} alt={item.name} />
-               </ImgThumb>
-            </GalleryWrapper>
+            <div>
+               <GalleryWrapper>
+                  <ImgThumb>
+                     <img src={item.gallery[0]} alt={item.name} />
+                  </ImgThumb>
+                  <ImgThumb>
+                     <img src={item.gallery[1]} alt={item.name} />
+                  </ImgThumb>
+                  <ImgThumb>
+                     <img src={item.gallery[2]} alt={item.name} />
+                  </ImgThumb>
+               </GalleryWrapper>
 
-            <Description>Description: {item.description}</Description>
+               <Description>Description: {item.description}</Description>
+            </div>
          </ScrollBox>
          <TabsBox>
             <Tab
