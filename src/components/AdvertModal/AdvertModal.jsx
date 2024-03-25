@@ -86,7 +86,7 @@ const AdvertModal = ({ item, onClose }) => {
          <Line />
          <div>
             {activeTab === 1 && <Features item={item} />}
-            {activeTab === 2 && <Reviews rev={item.reviews} />}
+            {activeTab === 2 && <Reviews reviews={item.reviews} />}
          </div>
       </AdvertModalContent>
    );
