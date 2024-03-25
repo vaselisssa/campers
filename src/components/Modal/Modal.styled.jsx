@@ -6,9 +6,8 @@ export const Backdrop = styled.div`
    left: 0;
 
    width: 100vw;
-   max-height: calc(100vh - 2%);
+   height: 100vh;
    z-index: 999;
-   overflow-y: auto;
 
    display: flex;
    justify-content: center;

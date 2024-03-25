@@ -1,12 +1,18 @@
 import styled from "@emotion/styled";
 
 export const AdvertModalContent = styled.div`
-   position: relative;
+   position: fixed;
+   top: 20px;
    border-radius: 20px;
    padding: 40px;
    width: 982px;
-   min-height: 720px;
+   height: calc(100vh - 5%);
    background-color: #fff;
+   overflow-y: auto;
+
+   ::-webkit-scrollbar {
+      width: 0;
+   }
 `;
 
 export const CloseBtn = styled.div`
