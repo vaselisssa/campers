@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setSearchParams } from "../../redux/adverts/filterSlice.js";
+import {
+   setSearchParams,
+   resetFilter,
+} from "../../redux/adverts/filterSlice.js";
 import { selectFilter } from "../../redux/adverts/selectors";
 import Icon from "../Icon";
 import {
@@ -25,8 +28,32 @@ const Filter = () => {
    const [details, setDetails] = useState(filter.details);
    const [vehicleType, setVehicleType] = useState(filter.vehicleType || "");
 
-   const handleClick = () => {
-      dispatch(setSearchParams({ location, details, vehicleType }));
+   const handleFilter = () => {
+      if (
+         filter.location ||
+         Object.values(filter.details).some(Boolean) ||
+         filter.vehicleType
+      ) {
+         dispatch(resetFilter());
+         setLocation("");
+         setDetails({
+            ac: false,
+            automatic: false,
+            kitchen: false,
+            tv: false,
+            bathroom: false,
+         });
+         setVehicleType("");
+
+         const vehicleInputs = document.querySelectorAll(
+            '[name="vehicleTypes"]'
+         );
+         vehicleInputs.forEach((input) => {
+            input.checked = false;
+         });
+      } else {
+         dispatch(setSearchParams({ location, details, vehicleType }));
+      }
    };
 
    const handleLocation = (e) => {
@@ -37,7 +64,7 @@ const Filter = () => {
    const handleVehicleType = (e) => {
       const { value } = e.target;
 
-      setVehicleType(value);
+      setVehicleType(value === vehicleType ? "" : value);
    };
 
    const handleEquipment = (e) => {
@@ -198,7 +225,13 @@ const Filter = () => {
             </EquipmentList>
          </div>
 
-         <SearchBtn onClick={handleClick}>Search</SearchBtn>
+         <SearchBtn onClick={handleFilter}>
+            {filter.location ||
+            Object.values(filter.details).some(Boolean) ||
+            filter.vehicleType
+               ? "Reset"
+               : "Search"}
+         </SearchBtn>
       </FilterBox>
    );
 };

@@ -19,8 +19,12 @@ const filterSlice = createSlice({
       setSearchParams(_, { payload }) {
          return payload;
       },
+
+      resetFilter() {
+         return initialState;
+      },
    },
 });
 
-export const { setSearchParams } = filterSlice.actions;
+export const { setSearchParams, resetFilter } = filterSlice.actions;
 export const filterReducer = filterSlice.reducer;
