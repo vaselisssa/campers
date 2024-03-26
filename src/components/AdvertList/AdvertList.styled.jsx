@@ -19,6 +19,7 @@ export const LoadMoreBtn = styled.button`
    margin-top: 50px;
    padding: 16px 32px;
    border: 1px solid rgba(71, 84, 103, 0.2);
+   background-color: inherit;
    outline: none;
    border-radius: 200px;
 
