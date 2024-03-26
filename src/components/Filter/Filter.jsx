@@ -77,14 +77,14 @@ const Filter = () => {
          <Location>
             <h4>Location</h4>
             <label>
-               <Icon icon="icon-location" width={18} height={20} />
                <input
                   onChange={handleLocation}
                   value={location}
                   name="location"
-                  placeholder="Kyiv, Ukraine"
+                  placeholder="City"
                   type="text"
                />
+               <Icon icon="icon-map" width={18} height={20} />
             </label>
          </Location>
 

@@ -29,11 +29,20 @@ export const Location = styled.div`
       border-radius: 10px;
       font-size: 16px;
       line-height: 1.25;
+
+      &::placeholder {
+         color: rgba(16, 24, 40, 0.6);
+      }
+
+      &:not(:placeholder-shown) + svg {
+         fill: transparent;
+         stroke: var(--primary-color);
+      }
    }
 
    svg {
       fill: transparent;
-      stroke: var(--primary-color);
+      stroke: #b9b9bd;
       position: absolute;
       top: 18px;
       left: 18px;
