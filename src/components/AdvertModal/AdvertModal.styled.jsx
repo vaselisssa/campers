@@ -15,7 +15,7 @@ export const AdvertModalContent = styled.div`
    }
 `;
 
-export const CloseBtn = styled.div`
+export const CloseBtn = styled.button`
    position: absolute;
    top: 40px;
    right: 40px;

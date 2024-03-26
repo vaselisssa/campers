@@ -1,70 +1,134 @@
-# Getting Started with Create React App
+<!DOCTYPE html>
+<html lang="en">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camper Rental Platform</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
 
-## Available Scripts
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-In the project directory, you can run:
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
 
-### `npm start`
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+        h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
 
-### `npm test`
+        li {
+            margin-bottom: 10px;
+        }
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+        .code {
+            font-family: 'Courier New', monospace;
+            background-color: #f1f1f1;
+            padding: 10px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+        }
 
-### `npm run build`
+        .highlight {
+            background-color: #ffffcc;
+        }
+    </style>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+</head>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<body>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    <div class="container">
+        <h1>Camper Rental Platform</h1>
 
-### `npm run eject`
+        <div>
+            <h2>Overview</h2>
+            <p>Camper Rental Platform is a comprehensive solution for individuals seeking camper rental services in Ukraine. Our platform comprises three main sections:</p>
+            <ol>
+                <li>Home Page: Provides an insightful overview of the services offered by our company, highlighting key features and benefits.</li>
+                <li>Camper Catalog: Browse through our extensive collection of campers, each equipped with detailed descriptions, photos, and rental specifications. Utilize advanced filtering options based on location, equipment, and camper type to find the perfect fit for your adventure.</li>
+                <li>Favorites: Keep track of your favorite campers by adding them to your personalized favorites list. Easily access and manage your saved listings for future reference.</li>
+            </ol>
+        </div>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+        <div>
+            <h2>Features</h2>
+            <ul>
+                <li><strong>Browse Available Campers:</strong> Explore a wide range of campers available for rent in Ukraine. Each listing provides comprehensive information, including photos, amenities, and rental specifications.</li>
+                <li><strong>Favorite Functionality:</strong> Add campers to your favorites list for quick access and comparison. Manage your favorite listings conveniently from your user profile.</li>
+                <li><strong>Advanced Filtering:</strong> Use advanced filtering options to refine your search and find the ideal camper. Filters include equipment (e.g., kitchen facilities, sleeping capacity), location, and type of van (e.g., fully integrated, camper van, alcove).</li>
+            </ul>
+        </div>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+        <div>
+            <h2>How to Use</h2>
+            <p>1. Cloning the Repository:</p>
+            <div class="code">
+                git clone https://github.com/lizaklimova/campers-ukraine
+            </div>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+            <p>2. Installing Dependencies:</p>
+            <div class="code">
+                cd campers-ukraine<br>
+                npm install
+            </div>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+            <p>3. Starting the Application:</p>
+            <div class="code">
+                npm start
+            </div>
 
-## Learn More
+            <p>The application will start running locally, accessible via your web browser at http://localhost:3000.</p>
+        </div>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+        <div>
+            <h2>Additional Task</h2>
+            <p>In addition to the core functionalities, the platform offers advanced filtering options for enhanced user experience:</p>
+            <ul>
+                <li><strong>Text Input:</strong> Enter specific criteria to search for campers in desired locations.</li>
+                <li><strong>Checkboxes:</strong> Select equipment preferences to narrow down the search results based on specific amenities.</li>
+                <li><strong>Radio Buttons:</strong> Choose camper types to filter listings according to your preferred vehicle configuration.</li>
+            </ul>
+        </div>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+        <div>
+            <h2>Execution</h2>
+            <p>The layout is designed to meet user expectations, ensuring seamless navigation and optimal viewing experience.</p>
+            <p>Error-free execution is ensured, with meticulous attention to detail and rigorous testing.</p>
+    			<h2>Execution</h2>
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<ul>
+  <li>The layout is designed to meet user expectations, ensuring seamless navigation and optimal viewing experience.</li>
+  <li>Error-free execution is ensured, with meticulous attention to detail and rigorous testing.</li>
+  <li>Utilization of Redux and Axios for efficient state management and seamless data retrieval.</li>
+  <li>Developed using React and React Router to deliver a dynamic and responsive user interface.</li>
+  <li>The application is successfully deployed on GitHub Pages, ensuring accessibility to users.</li>
+</ul>
+<p><strong>Note:</strong> The codebase is optimized, well-structured, and extensively documented for easy maintenance and future enhancements.</p>
