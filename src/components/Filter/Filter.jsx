@@ -58,7 +58,7 @@ const Filter = () => {
 
    const handleLocation = (e) => {
       const { value } = e.target;
-      setLocation(value);
+      setLocation(value.trim());
    };
 
    const handleVehicleType = (e) => {
