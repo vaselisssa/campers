@@ -149,3 +149,9 @@ export const Line = styled.hr`
    position: relative;
    transition: background-color 0.3s ease;
 `;
+
+export const TabsWrapper = styled.div`
+   margin-top: 44px;
+   display: flex;
+   gap: 24px;
+`;

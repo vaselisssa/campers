@@ -29,6 +29,9 @@ export const Location = styled.div`
       border-radius: 10px;
       font-size: 16px;
       line-height: 1.25;
+      &:placeholder-shown {
+         background-color: var(--input-background-color);
+      }
 
       &::placeholder {
          color: rgba(16, 24, 40, 0.6);

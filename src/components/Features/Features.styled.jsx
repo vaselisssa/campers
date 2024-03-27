@@ -1,12 +1,6 @@
 import styled from "@emotion/styled";
 
 export const FeaturesStyled = styled.div`
-   margin-top: 44px;
-   display: flex;
-   gap: 24px;
-`;
-
-export const FeaturesWrapper = styled.div`
    width: 430px;
    display: flex;
    flex-direction: column;
@@ -32,8 +26,4 @@ export const Line = styled.hr`
    background-color: rgba(16, 24, 40, 0.2);
    position: relative;
    transition: background-color 0.3s ease;
-`;
-
-export const FormBox = styled.form`
-   width: 448px;
 `;

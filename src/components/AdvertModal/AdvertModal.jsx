@@ -2,6 +2,7 @@ import React from "react";
 import Icon from "../Icon";
 import Features from "../Features";
 import Reviews from "../Reviews";
+import BookingForm from "../BookingForm";
 
 import { Rating, Location, ImgThumb } from "../AdvertItem/AdvertItem.styled";
 import {
@@ -16,6 +17,7 @@ import {
    TabsBox,
    Tab,
    Line,
+   TabsWrapper,
 } from "./AdvertModal.styled";
 
 const AdvertModal = ({ item, onClose, activeTab, setActiveTab }) => {
@@ -82,10 +84,13 @@ const AdvertModal = ({ item, onClose, activeTab, setActiveTab }) => {
             </Tab>
          </TabsBox>
          <Line />
-         <div>
-            {activeTab === 1 && <Features item={item} />}
-            {activeTab === 2 && <Reviews reviews={item.reviews} />}
-         </div>
+         <TabsWrapper>
+            <div>
+               {activeTab === 1 && <Features item={item} />}
+               {activeTab === 2 && <Reviews reviews={item.reviews} />}
+            </div>
+            {activeTab !== 0 && <BookingForm />}
+         </TabsWrapper>
       </AdvertModalContent>
    );
 };
