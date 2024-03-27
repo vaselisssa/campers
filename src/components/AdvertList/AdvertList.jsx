@@ -5,6 +5,7 @@ import { filterAdverts } from "../../utils/filterUtil.js";
 import AdvertItem from "../AdvertItem";
 import {
    AdvertListWrapper,
+   NoResultsMessage,
    AdvertListStyled,
    LoadMoreBtn,
 } from "./AdvertList.styled";
@@ -16,12 +17,20 @@ const AdvertList = () => {
 
    const filteredAdverts = filterAdverts(adverts, filter);
 
+   console.log(filteredAdverts.length);
+
    const handleLoadMore = () => {
       setLoadedCount((prev) => prev + 4);
    };
 
    return (
       <AdvertListWrapper>
+         {filteredAdverts.length === 0 && (
+            <NoResultsMessage>
+               <p>No advertisements match your criteria.</p>
+            </NoResultsMessage>
+         )}
+
          <AdvertListStyled>
             {filteredAdverts.slice(0, loadedCount).map((el) => (
                <AdvertItem key={el._id} item={el} />

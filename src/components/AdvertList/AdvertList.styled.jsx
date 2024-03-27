@@ -2,6 +2,21 @@ import styled from "@emotion/styled";
 
 export const AdvertListWrapper = styled.div`
    padding-bottom: 100px;
+   width: 888px;
+`;
+
+export const NoResultsMessage = styled.div`
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   width: 100%;
+   height: 100%;
+
+   font-size: 40px;
+   font-weight: 600;
+   line-height: 1.25;
+   color: var(--button-color);
 `;
 
 export const AdvertListStyled = styled.ul`
