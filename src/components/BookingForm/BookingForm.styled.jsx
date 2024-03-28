@@ -38,7 +38,7 @@ export const InputStyled = styled(Field)`
    border: none;
    outline: none;
 
-   &:placeholder-shown {
+   &:not(:placeholder-shown) {
       background-color: var(--input-background-color);
    }
 `;
@@ -65,7 +65,8 @@ export const Label = styled.label`
       width: 400px;
       border: none;
       outline: none;
-      &:placeholder-shown {
+
+      &:not(:placeholder-shown) {
          background-color: var(--input-background-color);
       }
    }
@@ -84,7 +85,8 @@ export const CommentStyled = styled(Field)`
    width: 100%;
    border: none;
    outline: none;
-   &:placeholder-shown {
+
+   &:not(:placeholder-shown) {
       background-color: var(--input-background-color);
    }
 `;
