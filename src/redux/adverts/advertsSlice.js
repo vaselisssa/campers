@@ -1,10 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getAllAdverts } from "./operations";
+import { getAdverts, getTotal } from "./operations";
 
 const initialState = {
    adverts: [],
+   total: 13,
    favorites:
       JSON.parse(localStorage.getItem("persist:favorites"))?.favorites ?? [],
+   bookings: [],
    isLoading: false,
    error: null,
 };
@@ -19,12 +21,20 @@ const advertsSlice = createSlice({
       removeFromFavorites: (state, { payload }) => {
          state.favorites = state.favorites.filter((el) => el._id !== payload);
       },
+      addBooking: (state, { payload }) => {
+         state.bookings = [...state.bookings, payload];
+      },
    },
 
    extraReducers: (builder) => {
       builder
-         .addCase(getAllAdverts.fulfilled, (state, { payload }) => {
-            state.adverts = [...payload];
+         .addCase(getTotal.fulfilled, (state, { payload }) => {
+            state.total = payload.length;
+            state.isLoading = false;
+            state.error = null;
+         })
+         .addCase(getAdverts.fulfilled, (state, { payload }) => {
+            state.adverts = [...state.adverts, ...payload];
             state.isLoading = false;
             state.error = null;
          })
@@ -45,4 +55,5 @@ const advertsSlice = createSlice({
 });
 
 export const advertsReducer = advertsSlice.reducer;
-export const { addToFavorites, removeFromFavorites } = advertsSlice.actions;
+export const { addToFavorites, removeFromFavorites, addBooking } =
+   advertsSlice.actions;

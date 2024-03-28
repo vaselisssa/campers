@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
-import {
-   selectAdverts,
-   selectFilter,
-   selectIsLoading,
-} from "../../redux/adverts/selectors";
-import { filterAdverts } from "../../utils/filterUtil.js";
+import { useDispatch } from "react-redux";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+import { getAdverts } from "../../redux/adverts/operations.js";
+import { convertFilterToSearchParams } from "../../utils/сonverter.js";
+
 import AdvertItem from "../AdvertItem";
 import {
    AdvertListWrapper,
@@ -14,30 +14,41 @@ import {
    LoadMoreBtn,
 } from "./AdvertList.styled";
 
-const AdvertList = () => {
-   const adverts = useSelector(selectAdverts);
-   const filter = useSelector(selectFilter);
-   const isLoading = useSelector(selectIsLoading);
-   const [loadedCount, setLoadedCount] = useState(4);
+const AdvertList = ({ adverts, total, filter, error }) => {
+   const dispatch = useDispatch();
+   const [page, setPage] = useState(1);
    const [isDataLoaded, setIsDataLoaded] = useState(false);
 
-   const filteredAdverts = filterAdverts(adverts, filter);
+   useEffect(() => {
+      const searchParams = convertFilterToSearchParams(filter);
+      console.log("Parameters before dispatch:", {
+         searchParams,
+      });
+      dispatch(getAdverts({ page, limit: 4, searchParams }));
+   }, [dispatch, filter, page]);
 
    useEffect(() => {
-      if (filteredAdverts.length > 0) {
+      if (error) {
+         toast.error(`Error: ${error}`);
+      }
+   }, [error]);
+
+   useEffect(() => {
+      if (adverts.length > 0 && total > 0) {
          setIsDataLoaded(true);
       }
-   }, [filteredAdverts]);
+   }, [adverts, total]);
 
    const handleLoadMore = () => {
-      setLoadedCount((prev) => prev + 4);
+      setPage(page + 1);
    };
 
    return (
       <AdvertListWrapper>
-         {filteredAdverts.length > 0 ? (
+         <ToastContainer />
+         {adverts.length > 0 ? (
             <AdvertListStyled>
-               {filteredAdverts.slice(0, loadedCount).map((el) => (
+               {adverts.map((el) => (
                   <AdvertItem key={el._id} item={el} />
                ))}
             </AdvertListStyled>
@@ -49,7 +60,7 @@ const AdvertList = () => {
             )
          )}
 
-         {loadedCount < filteredAdverts.length && (
+         {page * 4 < total && (
             <LoadMoreBtn type="button" onClick={handleLoadMore}>
                Load More
             </LoadMoreBtn>
