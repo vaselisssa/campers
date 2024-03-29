@@ -50,8 +50,6 @@ Camper Rental Platform is a comprehensive solution for individuals seeking campe
 
 -  The layout is designed to meet user expectations, ensuring seamless navigation and optimal viewing experience.
 -  Error-free execution is ensured, with meticulous attention to detail and rigorous testing.
--  Utilization of Redux and Axios for efficient state management and seamless data retrieval.
+-  Utilization of Redux Toolkit and Axios for efficient state management and seamless data retrieval.
 -  Developed using React and React Router to deliver a dynamic and responsive user interface.
 -  The application is successfully deployed on GitHub Pages, ensuring accessibility to users.
-
-**Note:** The codebase is optimized, well-structured, and extensively documented for easy maintenance and future enhancements.
