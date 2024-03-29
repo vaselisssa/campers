@@ -53,27 +53,22 @@ const BookingForm = () => {
          {({ isSubmitting }) => (
             <FormStyled>
                <FormTitle>Book your campervan now</FormTitle>
-
                <p>Stay connected! We are always ready to help you.</p>
-
                <InputStyled type="text" name="name" placeholder="Name" />
                <ErrorText name="name" component="div" />
-
                <InputStyled type="email" name="email" placeholder="Email" />
                <ErrorText name="email" component="div" />
-
                <Label>
                   <Icon icon="icon-calendar" width={20} height={20} />
                   <Calendar />
                   <ErrorText name="startDate" component="div" />
                </Label>
-
                <CommentStyled
                   as="textarea"
                   name="comment"
                   placeholder="Comment"
-               />
-
+               />{" "}
+               0
                <SubmitButton type="submit" disabled={isSubmitting}>
                   {isSubmitting ? "Sending..." : "Send"}
                </SubmitButton>

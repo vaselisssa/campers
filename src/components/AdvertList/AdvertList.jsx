@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import {
-   selectAdverts,
-   selectFilter,
-   selectIsLoading,
-} from "../../redux/adverts/selectors";
+import { selectAdverts, selectFilter } from "../../redux/adverts/selectors";
 import { filterAdverts } from "../../utils/filterUtil.js";
 import AdvertItem from "../AdvertItem";
 import {
@@ -17,7 +13,6 @@ import {
 const AdvertList = () => {
    const adverts = useSelector(selectAdverts);
    const filter = useSelector(selectFilter);
-   const isLoading = useSelector(selectIsLoading);
    const [loadedCount, setLoadedCount] = useState(4);
    const [isDataLoaded, setIsDataLoaded] = useState(false);
 
